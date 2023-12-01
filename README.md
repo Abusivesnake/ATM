@@ -3,7 +3,7 @@ Basit ATM sistemi yapacağım, konsol uygulaması olacaktır.
 
 # Kütüphaneler
 
-stdio.h, windows.h, locale.h kütüphaneleri kullanıldı.
+stdio.h, windows.h, locale.h (Türkçe karakter için locale.h kütüphanesi eklendi.) kütüphaneleri kullanıldı.
 
 # Tanımlamalar
 
