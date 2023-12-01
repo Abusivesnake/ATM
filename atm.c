@@ -5,6 +5,16 @@
 #define MAX_CEKILEBILIR_PARA 1000
 #define MAX_YATIRILABILIR_PARA 250000
 
+void SMS(int hesapno, int para, const char *mesaj)
+{
+    printf("[SMS]: (%d) numaralı hesap numarasına %d %s", hesapno, para, mesaj);
+}
+
+void Bildirim(int tno, const char *mesaj)
+{
+    printf("[BİLDİRİM MESAJI]: (%d) %s", tno, mesaj);
+}
+
 int Islemler(int hesapno, int islemID)
 {
     switch(islemID)
@@ -101,6 +111,23 @@ int Islemler(int hesapno, int islemID)
                     }
                 }
             }
+            break;
+        }
+        case 2:
+        {
+            int para;
+            printf("[SİSTEM]: Yatırmak istediğiniz para miktarını giriniz: ");
+            scanf("%d", &para);
+            while(para > MAX_YATIRILABILIR_PARA)
+            {
+                printf("[HATA]: Yatırmak istediğiniz para maksimum yatırılabilir miktarı aşmakta!\n");
+                printf("[BİLGİ]: Yatırmak istediğiniz para miktarı = %d\n", para);
+                printf("[BİLGİ]: Maksimum yatırılabilir para miktarı = %d\n", MAX_YATIRILABILIR_PARA);
+                printf("[SİSTEM]: Yatırmak istediğiniz para miktarını giriniz: ");
+                scanf("%d", &para);
+            }
+            printf("[SİSTEM]: %d numaralı hesap numarasında %d Türk Lirası miktarında para yatırıldı!\n", hesapno, para);
+            SMS(hesapno, para, "Türk Lirası para girişi olmuştur!");
             break;
         }
         case 4:
