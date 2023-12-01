@@ -9,6 +9,21 @@ int Islemler(int hesapno, int islemID)
 {
     switch(islemID)
     {
+        case 1:
+        {
+            int para;
+            printf("[SİSTEM]: Çekmek istediğiniz para miktarını giriniz: ");
+            scanf("%d", &para);
+            while(para > MAX_CEKILEBILIR_PARA)
+            {
+                printf("[HATA]: Sistem olarak çekilebilecek maksimum değerden fazla girdiniz!\n");
+                printf("[BİLGİ]: Maksimum çekilebilir para miktarı: %d\n", MAX_CEKILEBILIR_PARA);
+                printf("[SİSTEM]: Çekmek istediğiniz para miktarını giriniz: ");
+                scanf("%d", &para);
+            }
+            printf("[SİSTEM]: %d numaralı hesap numarasından %d miktarında para çekildi!", hesapno, para);
+            break;
+        }
         case 4:
         {
             printf("[SİSTEM]: Sistemden çıkış yapılıyor...\n");
